@@ -6,13 +6,11 @@ int ft_atoi(const char *str)
 	int i;
 	int dest;
 
-	if (str == NULL)
-		return (0);
-
 	is_neg = 1;
 	dest = 0;
 	i = 0;
-
+	while (ft_iswhitespace(str[i]))
+		i++;
 	if (str[i] == '-')
 	{
 		is_neg *= -1;

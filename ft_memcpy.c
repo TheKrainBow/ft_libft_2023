@@ -6,6 +6,10 @@ void *ft_memcpy(void *dst, const void *src, size_t n)
 	const char *casted_src;
 	size_t i;
 
+	if (dst == NULL && src == NULL)
+		return (NULL);
+	if (src == NULL && *((char *)src) == 0)
+		return (NULL);
 	casted_dst = dst;
 	casted_src = src;
 	i = 0;

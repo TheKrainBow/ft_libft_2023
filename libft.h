@@ -24,6 +24,7 @@ int						ft_islower(int c);
 int						ft_isascii(int c);
 int						ft_isdigit(int c);
 int						ft_isprint(int c);
+int 					ft_iswhitespace(int c);
 int						ft_isbetween(int c, int first, int last);
 int						ft_strmap(char *str, int (*f)(int));
 void					ft_striteri(char *str, void (*f)(unsigned int, char*));

@@ -7,6 +7,8 @@ char *ft_substr(const char *str, unsigned int start, size_t len)
 	int allocated_size;
 	size_t str_len;
 
+	if (str == NULL)
+		return (NULL);
 	str_len = ft_strlen(str);
 
 	if (start >= str_len)

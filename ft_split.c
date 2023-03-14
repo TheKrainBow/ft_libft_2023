@@ -22,16 +22,29 @@ int ft_count_words(char const *str, char c)
 	return (count);
 }
 
+char **ft_delete_all(char **dest, int word) {
+	int i;
+
+	i = 0;
+	while (i < word) {
+		free(dest[i]);
+		i++;
+	}
+	free(dest);
+	return NULL;
+}
+
 char **ft_split(char const *str, char c)
 {
 	char **dest;
 	const char *start;
 	int word;
 
-	dest = malloc((sizeof(char *) * ft_count_words(str, c) + 1));
+	if (str == NULL)
+		return (NULL);
+	dest = malloc(sizeof(char *) * (ft_count_words(str, c) + 1));
 	if (dest == NULL)
-		return NULL;
-
+		return (NULL);
 	while (*str && *str == c)
 		str++;
 	word = 0;
@@ -41,6 +54,9 @@ char **ft_split(char const *str, char c)
 		while (*str && *str != c)
 			str++;
 		dest[word] = ft_substr(start, 0, str - start);
+		if (dest[word] == NULL) {
+			return (ft_delete_all(dest, word));
+		}
 		word++;
 		while (*str && *str == c)
 			str++;
