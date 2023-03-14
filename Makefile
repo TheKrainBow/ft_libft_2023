@@ -10,17 +10,18 @@ SRCS_CHAR	=	ft_isalnum.c						\
 				ft_tolower.c						\
 				ft_toupper.c						\
 
-SRCS_LST	=	ft_lst_to_tab.c						\
+SRCS_LST	=										\
 				ft_lstadd_back.c					\
 				ft_lstadd_front.c					\
 				ft_lstclear.c						\
 				ft_lstdelone.c						\
-				ft_lstfirst.c						\
 				ft_lstiter.c						\
 				ft_lstlast.c						\
 				ft_lstmap.c							\
 				ft_lstnew.c							\
-				ft_lstsize.c
+				ft_lstsize.c						\
+				#ft_lstfirst.c						\
+				#ft_lst_to_tab.c						\
 
 SRCS_MATH	=	ft_atoi.c							\
 				ft_itoa.c							\
@@ -75,7 +76,7 @@ SRCS_STRS	=										\
 
 
 
-SRCS		=	$(SRCS_CHAR) $(SRCS_GNL) $(SRCS_MEM) $(SRCS_STRS) $(SRCS_MATH) $(SRCS_PRINT)
+SRCS		=	$(SRCS_CHAR) $(SRCS_GNL) $(SRCS_MEM) $(SRCS_STRS) $(SRCS_MATH) $(SRCS_PRINT) $(SRCS_LST)
 
 OBJS		=	$(SRCS:.c=.o)
 
