@@ -1,9 +1,16 @@
 #include "libft.h"
+#include <string.h>
 
 int main() {
-	char *str = "\t\v\f\r\n \f+\t\v\f\r\n \f1234";
-	printf("%d\n", atoi(str));
-	printf("%d\n", ft_atoi(str));
-	ft_putnbr_fd(-2147483648, 1);
+	char *dest = NULL;
+	char *dest2 = NULL;
+	char *srcs = "nyan !";
+	char *srcs2 = "nyan !";
+	int size = 0;
+
+	printf("'%lu' '%s' '%s'\n", strlcat(dest, srcs, size), dest, srcs);
+	printf("'%zu' '%s' '%s'\n", ft_strlcat(dest2, srcs2, size), dest2, srcs2);
+	free(dest);
+	free(dest2);
 	return (1);
 }
